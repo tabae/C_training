@@ -12,6 +12,6 @@ Print `Hello World!` on the standard output.
 Hello World!
 ```
 
-## Example of implementation
+## An example of implementation
 
 ./example.c
