@@ -26,18 +26,18 @@ You can read them directly from the files, or you can read them from the standar
 test_case/expect{1..6}.txtがtest_case/test_case{1..6}.txtに対応している．
 また，一括でチェックするためのシェルスクリプトも用意してある．
 - test_file.sh : ファイル読み込み版
-  - 使い方： ./test_file.sh [実行ファイル名]
-  - ただし，ファイル名は第一コマンドライン引数として与えられる．
+  - 使い方：`$ ./test_file.sh [実行ファイル名]`
+  - ただし，入力ファイル名は第一コマンドライン引数として与えられる．
 - test_stdin.sh :　標準入力読み込み版
-  - 使い方： ./test_stdin.sh [実行ファイル名]
+  - 使い方：`$ ./test_stdin.sh [実行ファイル名]`
 
 test_case/expect{1..6}.txt correspond to test_case/test_case{1..6}.txt.
 In addition, shell scripts are prepared for batch checking.
 - test_file.sh : reading from file version
-  - Usage: . /test_file.sh [executable file name]
-  - The file name is given as the first command line argument.
+  - Usage: `$ ./test_file.sh [executable file name]`
+  - Note taht the input file name is given as the first command line argument.
 - test_stdin.sh : reading from stdin version
-  - Usage: . /test_stdin.sh [executable file name]
+  - Usage: `$ ./test_stdin.sh [executable file name]`
 
 
 ## Examples of Implementation
