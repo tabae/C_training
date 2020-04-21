@@ -10,6 +10,11 @@ int main(int argc, char *argv[]){
     long long N = atoi(argv[1]);
     float *a = (float *)malloc(N * sizeof(float));
 
+    if(a == NULL){
+        fprintf(stderr, "ERROR: Failed to allocate memory.\n");
+        exit(1);
+    }
+
     a[0] = 0;
     int i;
     for(i = 1; i < N; i++){
