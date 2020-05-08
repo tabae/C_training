@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-O2 -lm
+CFLAGS=-O3 -mavx -ffast-math -fopenmp -lm
 SRC=main.c
 EXE=exe
 

@@ -4,17 +4,14 @@
 
 #define NMAX 50000
 
-struct Mass_Point{
-    float r[3]; // r[0]:x, r[1]:y, r[2]:z
-    float a[3];
-    float m;
-    char id[100];
-};
+float r[NMAX][3];
+float a[NMAX][3];
+float m[NMAX];
+char id[NMAX][100];
 
 int main(){
 
     int i, j, k;
-    struct Mass_Point mp[NMAX];
 
     // read from file
     FILE *fp;
@@ -24,28 +21,31 @@ int main(){
         exit(1);
     }
     for(i = 0; i < NMAX; i++){
-        int res = fscanf(fp, "%s%f%f%f%f", mp[i].id, &(mp[i].m), &(mp[i].r[0]), &(mp[i].r[1]), &(mp[i].r[2]));
+        int res = fscanf(fp, "%s%f%f%f%f", id[i], &m[i], &(r[i][0]), &(r[i][1]), &(r[i][2]));
     }
     fclose(fp);
 
     // initialize
     for(i = 0; i < NMAX; i++){
         for(j = 0; j < 3; j++){
-            mp[i].a[j] = 0;
+            a[i][j] = 0;
         }
     }
 
     // main loop
-    for(i = 0; i < NMAX; i++){
-        for(j = 0; j < NMAX; j++){
-            if(i == j) continue;
-            float dr = 0;
+    float dr[NMAX];
+    for(i = 0; i < NMAX-1; i++){
+        for(j = i+1; j < NMAX; j++){
+            dr[j] = 0;
             for(k = 0; k < 3; k++){
-                dr += (mp[i].r[k] - mp[j].r[k]) * (mp[i].r[k] - mp[j].r[k]); 
+                dr[j] += (r[i][k] - r[j][k]) * (r[i][k] - r[j][k]); 
             }
-            dr = sqrtf(dr);
+            dr[j] = sqrtf(1.0/dr[j]);
+        }
+        for(j = i+1; j < NMAX; j++){
             for(k = 0; k < 3; k++){
-                mp[i].a[k] += mp[j].m * (mp[j].r[k] - mp[i].r[k]) / (dr * dr * dr);
+                a[i][k] += m[j] * (r[j][k] - r[i][k]) * (dr[j] * dr[j] * dr[j]);
+                a[j][k] += m[i] * (r[i][k] - r[j][k]) * (dr[j] * dr[j] * dr[j]);
             }
         }
     }
@@ -57,7 +57,7 @@ int main(){
         exit(1);
     }
     for(i = 0; i < NMAX; i++){
-        fprintf(fp, "%s %f %f %f\n", mp[i].id, mp[i].a[0], mp[i].a[1], mp[i].a[2]);
+        fprintf(fp, "%s %f %f %f\n", id[i], a[i][0], a[i][1], a[i][2]);
     }
     fclose(fp);
 

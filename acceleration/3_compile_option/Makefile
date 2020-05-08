@@ -1,10 +1,10 @@
 CC=gcc
-CFLAGS=-O2 -lm
+CFLAGS=-O3 -mavx -ffast-math -lm
 SRC=main.c
 EXE=exe
 
 default: $(SRC)
 	$(CC) -o $(EXE) $(SRC) $(CFLAGS)
 
-clean:
+clean
 	rm -f $(EXE)

@@ -24,7 +24,7 @@ int main(){
         exit(1);
     }
     for(i = 0; i < NMAX; i++){
-        fscanf(fp, "%s%f%f%f%f", mp[i].id, &(mp[i].m), &(mp[i].r[0]), &(mp[i].r[1]), &(mp[i].r[2]));
+        int res = fscanf(fp, "%s%f%f%f%f", mp[i].id, &(mp[i].m), &(mp[i].r[0]), &(mp[i].r[1]), &(mp[i].r[2]));
     }
     fclose(fp);
 
