@@ -5,9 +5,9 @@
 #define NMAX 50000
 
 struct Mass_Point{
-    double r[3]; // r[0]:x, r[1]:y, r[2]:z
-    double a[3];
-    double m;
+    float r[3]; // r[0]:x, r[1]:y, r[2]:z
+    float a[3];
+    float m;
     char id[100];
 };
 
@@ -24,10 +24,16 @@ int main(){
         exit(1);
     }
     for(i = 0; i < NMAX; i++){
-        struct Mass_Point *ptr = mp + i;
-        fscanf(fp, "%s%lf%lf%lf%lf", ptr->id, &(ptr->m), &(ptr->r[0]), &(ptr->r[1]), &(ptr->r[2]));
+        fscanf(fp, "%s%f%f%f%f", mp[i].id, &(mp[i].m), &(mp[i].r[0]), &(mp[i].r[1]), &(mp[i].r[2]));
     }
     fclose(fp);
+
+    // initialize
+    for(i = 0; i < NMAX; i++){
+        for(j = 0; j < 3; j++){
+            mp[i].a[j] = 0;
+        }
+    }
 
     // main loop
     for(i = 0; i < NMAX-1; i++){
@@ -51,7 +57,7 @@ int main(){
         exit(1);
     }
     for(i = 0; i < NMAX; i++){
-        fprintf(fp, "%s %lf %lf %lf\n", mp[i].id, mp[i].a[0], mp[i].a[1], mp[i].a[2]);
+        fprintf(fp, "%s %f %f %f\n", mp[i].id, mp[i].a[0], mp[i].a[1], mp[i].a[2]);
     }
     fclose(fp);
 
