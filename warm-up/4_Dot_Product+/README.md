@@ -4,18 +4,10 @@
 
 長さNの2つのベクトルaとbが与えられます．内積を出力してください．ただし，**内積計算部は関数として実装すること．**
 
-長さNのベクトルとは：
-- a = [a_1, a_2, a_3, ..., a_N]
-- b = [b_1, b_2, b_3, ..., b_N]
-
 Two vectors a and b, which its length is N, are given. Print the dot product. **Note that the dot product calculation must be implemented as a function.**
 
-Length N means：
-- a = [a_1, a_2, a_3, ..., a_N]
-- b = [b_1, b_2, b_3, ..., b_N]
-
 ## Input Files
-
+6つの入力ファイルが用意されている．
 - ./test_case/testcase1.txt
 - ./test_case/testcase2.txt
 - ./test_case/testcase3.txt
@@ -26,24 +18,21 @@ Length N means：
 ### Format
 
 それぞれのファイルに，次のような様式でベクトルaとbが記述されている．
-
+```
+N
+a_1 a_2 a_3 ... a_N
+b_1 b_2 b_3 ... b_N
+```
 ファイルから直接読み込んでも良いし，`cat testcase.txt | ./a.out` のようにして，標準入力から読み込んでも良い．
 
-```
-N
-a_1 a_2 a_3 ... a_N
-b_1 b_2 b_3 ... b_N
-```
 
 In each file, vectors a and b are described in the following format.
-
-You can read them directly from the files, or you can read them from the standard input by typing as `cat testcase.txt | ./a.out`.
-
 ```
 N
 a_1 a_2 a_3 ... a_N
 b_1 b_2 b_3 ... b_N
 ```
+You can read them directly from the files, or you can read them from the standard input by typing as `cat testcase.txt | ./a.out`.
 
 ## Expected Output
 
