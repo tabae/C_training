@@ -3,7 +3,7 @@
 import random
 
 fname = "input.txt"
-nmax = 10000
+nmax = 50000
 hoge = ["MP", "LG", "GU", "BB", "DX"]
 
 def main():

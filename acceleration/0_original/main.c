@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define NMAX 10000
+#define NMAX 50000
 
 struct Mass_Point{
     double r[3]; // r[0]:x, r[1]:y, r[2]:z
