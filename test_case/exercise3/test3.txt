@@ -1,0 +1,101 @@
+100
+push 85
+top
+push 59
+push 45
+push 44
+top
+push 40
+top
+top
+push 66
+push 69
+top
+pop
+pop
+top
+pop
+pop
+top
+pop
+push 8
+top
+pop
+push 5
+top
+push 79
+top
+top
+pop
+top
+push 20
+top
+push 54
+push 14
+top
+pop
+push 20
+top
+pop
+pop
+top
+push 88
+push 45
+top
+top
+push 47
+push 32
+top
+push 82
+top
+top
+top
+top
+top
+push 77
+top
+push 39
+push 13
+push 95
+pop
+top
+push 84
+push 60
+push 90
+push 52
+push 38
+push 27
+top
+push 5
+push 82
+top
+push 54
+push 98
+push 13
+push 99
+pop
+top
+top
+push 12
+top
+push 96
+top
+push 94
+top
+push 43
+top
+push 87
+top
+push 77
+pop
+push 18
+pop
+pop
+push 39
+top
+push 44
+top
+pop
+pop
+push 35
+push 7
