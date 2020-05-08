@@ -1,0 +1,31 @@
+30
+push 62
+push 28
+top
+top
+push 96
+pop
+push 13
+top
+push 23
+top
+push 64
+pop
+pop
+push 49
+top
+push 30
+top
+push 42
+push 23
+pop
+push 96
+push 16
+top
+push 8
+top
+push 63
+push 13
+push 90
+top
+push 34
